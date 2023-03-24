@@ -1,0 +1,11 @@
+<h1>Animes#index</h1>
+
+<% @anime.each do |element|%>
+
+  <p> <%= element.title %> </p>
+  <p> <%= element.season  %> </p>
+  <p> <%= element.synopsis %> </p>
+  <p> <%= element.comment %> </p>
+  <img src="<%=element.link%>" alt=<%="#{element.title} Illustration picture"%>>
+
+<% end %>
