@@ -14,28 +14,44 @@
 						<a class="codrops-icon codrops-icon-prev" href="/animes"><span>Back to list</span></a>
 					</div>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
-					<ol class="fs-fields">
-						<li>
-							<label class="fs-field-label fs-anim-upper" for="q1">What's the anime's name ?</label>
-							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Hunter x Hunter" required/>
-						</li>
-						<li>
-							<label class="fs-field-label fs-anim-upper" for="q2">Until which season id you watch it?</label>
-							<input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="4" required/>
-						</li>
+				<%= form_for @anime, html: {class: "fs-form fs-form-full", autocomplete: "off"} do |f| %>
+          <ol class="fs-fields">
             <li>
-							<label class="fs-field-label fs-anim-upper" for="q3">Please add the synopsis</label>
-							<input class="fs-anim-lower" id="q3" name="q3" type="text" placeholder="The story focuses on a young boy named Gon Freecss who discovers that his father, who left him at a young age, is actually a world-renowned Hunter, a licensed professional who specializes in fantastical pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or ..." required/>
-						</li>
+              <%= f.label :title, "What's the anime's name ?", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :title, class: "fs-anim-lower", placeholder: "Hunter x Hunter", required: true %>
+            </li>
             <li>
-							<label class="fs-field-label fs-anim-upper" for="q4">Please add the synopsis</label>
-							<input class="fs-anim-lower" id="q4" name="q4" type="text" placeholder="4" required/>
-						</li>
-
-					</ol><!-- /fs-fields -->
-					<button class="fs-submit" type="submit">Send answers</button>
-				</form><!-- /fs-form -->
+              <%= f.label :season, "Until which season did you watch it?", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :season, class: "fs-anim-lower", placeholder: "4", required: true %>
+            </li>
+            <li>
+              <%= f.label :synopsis, "Please add the synopsis", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :synopsis, class: "fs-anim-lower", placeholder: "The story focuses on a young boy named Gon Freecss who discovers that his father, who left him at a young age, is actually a world-renowned Hunter, a licensed professional who specializes in fantastical pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or ...", required: true %>
+            </li>
+            <li>
+              <%= f.label :comment, "Please add a comment", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :comment, class: "fs-anim-lower", placeholder: "I really enjoyed this anime because....", required: true %>
+            </li>
+            <li>
+              <%= f.label :link, "Please provide a link to the trailer", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :link, class: "fs-anim-lower", placeholder: "www.traileroftheanime.com", required: true %>
+            </li>
+            <li>
+              <%= f.label :rate_synopsis, "Please rate the synopsis", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :rate_synopsis, class: "fs-anim-lower", placeholder: "4.5", required: true %>
+            </li>
+            <li>
+              <%= f.label :rate_animation, "Please rate the animation", class: "fs-field-label fs-anim-upper" %>
+              <%= f.text_field :rate_animation, class: "fs-anim-lower", placeholder: "4", required: true %>
+            </li>
+            <li>
+              <%= f.label :image_url, "Upload an image", class: "fs-field-label fs-anim-upper" %>
+              <%= f.file_field :image_url, class: "fs-anim-lower", accept: "image/*" %>
+              <%# to do : upload as a file, push on cloudinary %>
+            </li>
+          </ol><!-- /fs-fields -->
+          <%= f.submit "Send answers", class: "fs-submit" %>
+        <% end %><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
 
 
