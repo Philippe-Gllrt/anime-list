@@ -1,14 +1,16 @@
-<h1>Animes#index</h1>
 
-<% @anime.each do |element|%>
-
-  <p> <%= element.title %> </p>
-  <p> <%= element.season  %> </p>
-  <p> <%= element.synopsis %> </p>
-  <p> <%= element.comment %> </p>
-  <p> <%= element.link %> </p>
-  <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%>>
-  <% if element.photo.attached? %>
-  <%= cl_image_tag element.photo.key, height: 300, width: 400, crop: :fill %>
+<%= render "shared/header" %>
+<div class="index-content">
+  <% @anime.each do |element|%>
+    <div class="anime-card">
+      <h2> <%= element.title %> </h2>
+      <div class="card-zoom">
+      <% if element.photo.attached? %>
+        <%= cl_image_tag element.photo.key, height: 300, width: 500, crop: :fill, class: "card-illustration" %>
+      <% else %>
+        <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%> class="card-illustration">
+      <% end %>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

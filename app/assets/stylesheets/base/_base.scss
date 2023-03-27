@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #161616;
+  // min-height: 100vh;
+}
+
+h2 {
+  color: white;
+  font-size: 40px;
+  font-family: "Bebas Neue";
+}
+
+p{
+  color: white;
+  font-family: "Baskervville";
+}
+
+$Font-h2: "Bebas Neue";
+$Font-p: "Baskervville";

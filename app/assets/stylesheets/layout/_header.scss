@@ -1,0 +1,15 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 1em;
+  display: flex;
+  justify-content: space-between;
+  height: 5vh;
+  a {
+    font-family: $Font-h2;
+    font-size: 1em;
+    color: white;
+    text-decoration: none;
+    margin: 0 2em;
+  }
+}

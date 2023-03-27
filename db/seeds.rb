@@ -12,8 +12,6 @@ user = User.create(
   password: "lewagon"
 )
 
-
-
 20.times do
   rand_id = rand(1..3000)
   url = "https://kitsu.io/api/edge/anime/#{rand_id}"
