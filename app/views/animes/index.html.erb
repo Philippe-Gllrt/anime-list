@@ -8,5 +8,7 @@
   <p> <%= element.comment %> </p>
   <p> <%= element.link %> </p>
   <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%>>
-
+  <% if element.photo.attached? %>
+  <%= cl_image_tag element.photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
 <% end %>
