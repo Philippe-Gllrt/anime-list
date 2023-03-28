@@ -24,22 +24,9 @@
     height: 300px;
     width: 500px;
     object-fit: cover;
-    filter: grayscale(80%);
+    // filter: grayscale(80%);
+    filter: brightness(0.50);
     z-index: 500;
-    transition: 0.7s;
-  }
-}
-
-.anime-card:hover {
-  .card-illustration{
-    filter: grayscale(0%);
-    transition: 0.5s;
-    transform: scale(1.2);
-  }
-
-  h2 {
-    color: rgba(255, 255, 255, 0);
-    text-shadow: 0 0 2px #1e1e1e00;
     transition: 0.7s;
   }
 }
@@ -48,4 +35,18 @@
   width: fit-content;
   height: fit-content;
   overflow: hidden;
+}
+
+.anime-card:hover {
+  .card-illustration{
+    filter: brightness(1);
+    transition: 0.7s;
+    transform: scale(1.2);
+  }
+
+  h2 {
+    color: rgba(255, 255, 255, 0);
+    text-shadow: 0 0 2px #1e1e1e00;
+    transition: 0.5s;
+  }
 }

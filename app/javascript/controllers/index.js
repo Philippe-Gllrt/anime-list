@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import HorizontalScrolling from "./horizontal_scrolling"
+application.register("horizontal_scrolling", HorizontalScrolling)
