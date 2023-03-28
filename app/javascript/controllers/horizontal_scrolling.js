@@ -1,17 +1,27 @@
 const scrollContainer = document.querySelector("html");
+const animeList = document.querySelector('.index-content');
+const firstLetterElement = document.getElementById('first-letter');
+
+function updateFirstLetter() {
+  // Iterate over each anime element in the list
+  for (let i = 0; i < animeList.children.length; i++) {
+    const animeElement = animeList.children[i];
+    const animeRect = animeElement.getBoundingClientRect();
+    // Check if the anime element is visible on the screen
+    if (animeRect.left >= 0 && animeRect.right <= window.innerWidth) {
+      // Extract the first letter from the anime title and update the first letter element
+      const currentAnime = animeElement.children[0].innerText;
+      console.log(currentAnime);
+      const firstLetter = currentAnime.charAt(0);
+      firstLetterElement.innerText = firstLetter;
+      // Exit the loop once we've found the visible anime element
+      break;
+    }
+  }
+}
 
 scrollContainer.addEventListener("wheel", (evt) => {
-  evt.preventDefault();
   scrollContainer.scrollLeft -= evt.deltaY;
+  console.log("coucou");
+  updateFirstLetter();
 });
-
-// const scrollContainer = document.querySelector(".index-container");
-// const absoluteElements = document.querySelector("h2")
-
-// scrollContainer.addEventListener("scroll", () => {
-//   const scrollLeft = scrollContainer.scrollLeft;
-//   for (let i = 0; i < absoluteElements.length; i++) {
-//     const absoluteElement = absoluteElements[i];
-//     absoluteElement.style.left = `${absoluteElement.offsetLeft - scrollLeft}px`;
-//   }
-// });
