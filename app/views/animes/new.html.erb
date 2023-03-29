@@ -3,56 +3,63 @@
 
 <head>
 
-<%# TO FULLFILL WITH LINK TO CSS %>
-
 </head>
 <body>
-  <div class="fs-form-wrap" id="fs-form-wrap">
+  <div><!-- TODO: ADD NAME TO CONTAINER -->
 				<div class="fs-title">
 					<h1>Add a Anime to the list</h1>
-					<div class="codrops-top">
-						<a class="codrops-icon codrops-icon-prev" href="/animes"><span>Back to list</span></a>
-					</div>
+					<a href="/animes"><span>Back to list</span></a>
 				</div>
-				<%= form_for @anime, html: {class: "fs-form fs-form-full", autocomplete: "off"} do |f| %>
-          <ol class="fs-fields">
-            <li>
-              <%= f.label :title, "What's the anime's name ?", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :title, class: "fs-anim-lower", placeholder: "Hunter x Hunter", required: true %>
+				<%= form_for @anime, html: {id: "regForm", autocomplete: "off"} do |f| %>
+          <ol>
+            <li class="tab">
+              <%= f.label :title, "What's the anime's name ?" %>
+              <%= f.text_field :title, placeholder: "Hunter x Hunter", required: true %>
             </li>
-            <li>
-              <%= f.label :season, "Until which season did you watch it?", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :season, class: "fs-anim-lower", placeholder: "4", required: true %>
+            <li class="tab">
+              <%= f.label :season, "Until which season did you watch it?" %>
+              <%= f.text_field :season, placeholder: "4", required: true %>
             </li>
-            <li>
-              <%= f.label :synopsis, "Please add the synopsis", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :synopsis, class: "fs-anim-lower", placeholder: "The story focuses on a young boy named Gon Freecss who discovers that his father, who left him at a young age, is actually a world-renowned Hunter, a licensed professional who specializes in fantastical pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or ...", required: true %>
+            <li class="tab">
+              <%= f.label :synopsis, "Please add the synopsis" %>
+              <%= f.text_field :synopsis, placeholder: "The story focuses on a young boy named Gon Freecss who discovers that his father, who left him at a young age, is actually a world-renowned Hunter, a licensed professional who specializes in fantastical pursuits such as locating rare or unidentified animal species, treasure hunting, surveying unexplored enclaves, or ...", required: true %>
             </li>
-            <li>
-              <%= f.label :comment, "Please add a comment", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :comment, class: "fs-anim-lower", placeholder: "I really enjoyed this anime because....", required: true %>
+            <li class="tab">
+              <%= f.label :comment, "Please add a comment" %>
+              <%= f.text_field :comment, placeholder: "I really enjoyed this anime because....", required: true %>
             </li>
-            <li>
-              <%= f.label :link, "Please provide a link to the trailer", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :link, class: "fs-anim-lower", placeholder: "www.traileroftheanime.com", required: true %>
+            <li class="tab">
+              <%= f.label :link, "Please provide a link to the trailer" %>
+              <%= f.text_field :link, placeholder: "www.traileroftheanime.com", required: true %>
             </li>
-            <li>
-              <%= f.label :rate_synopsis, "Please rate the synopsis", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :rate_synopsis, class: "fs-anim-lower", placeholder: "4.5", required: true %>
+            <li class="tab">
+              <%= f.label :rate_synopsis, "Please rate the synopsis" %>
+              <%= f.text_field :rate_synopsis, placeholder: "4.5", required: true %>
             </li>
-            <li>
-              <%= f.label :rate_animation, "Please rate the animation", class: "fs-field-label fs-anim-upper" %>
-              <%= f.text_field :rate_animation, class: "fs-anim-lower", placeholder: "4", required: true %>
+            <li class="tab">
+              <%= f.label :rate_animation, "Please rate the animation" %>
+              <%= f.text_field :rate_animation, placeholder: "4", required: true %>
             </li>
-            <li>
-              <%= f.label :photo, "Upload an image", class: "fs-field-label fs-anim-upper" %>
-              <%= f.file_field :photo, class: "fs-anim-lower", accept: "image/*" %>
-              <%# to do : upload as a file, push on cloudinary %>
+            <li class="tab">
+              <%= f.label :photo, "Upload an image" %>
+              <%= f.file_field :photo, accept: "image/*" %>
             </li>
-          </ol><!-- /fs-fields -->
+          </ol>
           <%= f.submit "Send answers", class: "fs-submit" %>
-        <% end %><!-- /fs-form -->
-			</div><!-- /fs-form-wrap -->
+        <% end %><!-- /regForm -->
+        <div style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+			</div><!-- NAME CONTAINER -->
 
 
 
