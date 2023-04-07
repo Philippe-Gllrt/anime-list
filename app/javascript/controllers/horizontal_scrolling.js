@@ -19,7 +19,20 @@ function updateFirstLetter() {
   }
 }
 
+function infiniteScroll() {
+  const containerWidth = scrollContainer.offsetWidth;
+  const contentWidth = scrollContainer.scrollWidth;
+  const scrollLeft = scrollContainer.scrollLeft;
+
+  if (scrollLeft + containerWidth >= contentWidth) {
+    const firstItem = animeList.firstChild;
+    animeList.appendChild(firstItem.cloneNode(true));
+    animeList.removeChild(firstItem);
+    scrollContainer.scrollLeft -= containerWidth;
+  }
+}
+
 scrollContainer.addEventListener("wheel", (evt) => {
-  scrollContainer.scrollLeft -= evt.deltaY;
+  scrollContainer.scrollLeft += evt.deltaY;
   updateFirstLetter();
 });

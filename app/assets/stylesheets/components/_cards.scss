@@ -1,16 +1,16 @@
 .anime-card {
   margin-right: 1em;
-  height: 300px;
+  height: 200px;
   // width: 600px;
   // width: 500px;
   display: flex;
   align-items: center;
-  margin-right: 3em;
+  margin-right: 1.5em;
   h2 {
     position: absolute;
     // mix-blend-mode: difference;
-    max-height: 250px;
-    max-width: 600px;
+    max-height: 200px;
+    // max-width: 300px;
     text-shadow: 0 0 2px #1E1E1E;
     overflow: hidden;
     // top: 50vh;
@@ -21,8 +21,8 @@
   .card-illustration {
     margin-left: 4em;
     margin-top: 0;
-    height: 300px;
-    width: 500px;
+    height: 200px;
+    width: 400px;
     object-fit: cover;
     // filter: grayscale(80%);
     filter: brightness(0.50);
