@@ -36,3 +36,7 @@ scrollContainer.addEventListener("wheel", (evt) => {
   scrollContainer.scrollLeft += evt.deltaY;
   updateFirstLetter();
 });
+
+scrollContainer.addEventListener("scroll", (evt) => {
+  infiniteScroll();
+});

@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import HorizontalScrolling from "./horizontal_scrolling"
 application.register("horizontal_scrolling", HorizontalScrolling)
 
-import AnimeForm from "./anime_form"
-application.register("anime_form", AnimeForm)
+// import AnimeForm from "./anime_form"
+// application.register("anime_form", AnimeForm)
+
+import TransitionIndexShow from "./transition_index_show"
+application.register("transition_index_show", TransitionIndexShow)

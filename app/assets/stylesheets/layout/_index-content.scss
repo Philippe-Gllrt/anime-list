@@ -15,3 +15,8 @@
   color: white;
   margin: 0 1em;
 }
+
+.scale-down {
+  transform: scale(0.3);
+  transition: 2s;
+}
