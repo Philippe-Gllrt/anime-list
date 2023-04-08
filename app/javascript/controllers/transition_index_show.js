@@ -3,20 +3,40 @@ const container = document.querySelector('.index-content');
 
 document.addEventListener("DOMContentLoaded", function() {
   const animeCards = document.querySelectorAll(".anime-card");
+  let totalWidth = 0;
+  const scrollLength = 3000;
+  const animeList = document.querySelector('.index-content');
+  const animeItems = animeList.querySelectorAll('.anime-card');
+  let currentIndex = 0;
+
   for (let i = 0; i < animeCards.length; i++) {
     animeCards[i].addEventListener("click", function() {
-      console.log(animeCards[i]);
-      // container.className += " reduced"
+
+      while (totalWidth < scrollLength) {
+
+        const clonedAnime = animeItems[currentIndex].cloneNode(true);
+        animeList.appendChild(clonedAnime);
+        currentIndex = (currentIndex + 1) % animeItems.length;
+
+        totalWidth += (animeItems[currentIndex].offsetWidth*0.3 - 100);
+      }
+
       $('html, body').animate({
-        scrollLeft: "+=7000"
-      }, 3000);
+        scrollLeft: `+=${scrollLength}`
+      }, 2000);
 
       setTimeout(function() {
       $('.index-content').addClass('scale-down');
-      // setTimeout(function() {
-      //   $('.index-content').removeClass('scale-down');
-      // }, 2000);
-      }, 300);
+      }, 00);
+
+      setTimeout(function() {
+      $('.fade_index').addClass('fade_out')
+      }, 1000);
+
+      setTimeout(function() {
+        window.location.href = `/animes/${animeCards[i].getAttribute('data-anime-id')}`;
+      }, 2200);
+
     });
   }
 });

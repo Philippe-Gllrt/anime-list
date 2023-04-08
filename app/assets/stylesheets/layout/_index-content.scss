@@ -20,3 +20,21 @@
   transform: scale(0.3);
   transition: 2s;
 }
+
+.fade_index {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  background-color: #161616;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.fade_out {
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: 1s;
+}
