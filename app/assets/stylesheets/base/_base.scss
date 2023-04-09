@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Bebas+Neue&family=Bitter:wght@200&display=swap');
 
 * {
   margin: 0;
@@ -21,8 +21,14 @@ h2 {
 
 p{
   color: white;
-  font-family: "Baskervville";
+  font-family: "Bitter";
+  font-size: 18px;
 }
 
+h1 {
+  font-family: "Amatic SC";
+  color: White;
+  font-size: 45px;
+}
 $Font-h2: "Bebas Neue";
 $Font-p: "Baskervville";

@@ -1,0 +1,45 @@
+.hero-banner {
+  background-image: url('https://res.cloudinary.com/dxhubssyx/image/upload/v1681030995/vn8db1nc3evytytezmwr.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: multiply;
+  // width: 50vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+#vespa {
+  background-image: url('https://res.cloudinary.com/dxhubssyx/image/upload/v1681032328/mod_xqcdhm.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: translateX(-20vw);
+  // background-blend-mode: multiply;
+  height: 33vh;
+  width: 15vw;
+  position: absolute;
+  bottom: 2vh;
+  z-index: 200;
+  animation: translation 10s linear infinite, vrombing 0.3s linear infinite;
+  animation-delay: 2s;
+}
+
+.no-diplay {
+  display: none;
+}
+
+@keyframes translation {
+  0% { transform: translateX(-20vw);}
+  50% { transform: translateX(50vw) scaleX(1)}
+  51% { transform: translateX(50vw) scaleX(-1)}
+  100% { transform: translateX(-40vw) scaleX(-1)}
+}
+
+@keyframes vrombing {
+  0% { bottom: 2vh; }
+  33% { bottom: 2.2vh; }
+  66% { bottom: 1.8vh; }
+  100% { bottom: 2vh; }
+
+}

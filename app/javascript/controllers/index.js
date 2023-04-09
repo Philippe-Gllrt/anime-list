@@ -15,3 +15,9 @@ application.register("horizontal_scrolling", HorizontalScrolling)
 
 import TransitionIndexShow from "./transition_index_show"
 application.register("transition_index_show", TransitionIndexShow)
+
+import LandingPage from "./landing_page"
+application.register("landing_page", LandingPage)
+
+import BtnHome from "./btn_home"
+application.register("btn-home", BtnHome)

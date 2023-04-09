@@ -1,0 +1,52 @@
+#fade-out-left-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 40vw;
+  background-color: #a1a1a1;
+  animation: panel-appear-Y 1s ease;
+  transform-origin: bottom;
+}
+
+#fade-out-left-2 {
+  height: 100vh;
+  width: 40vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+  animation: panel-appear-Y 1.2s ease;
+  transform-origin: bottom;
+}
+
+#fade-out-right-1 {
+  height: 100vh;
+  width: 60vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #a1a1a1;
+  animation: panel-appear-Y 1s ease;
+  transform-origin: top;
+}
+
+#fade-out-right-2 {
+  height: 100vh;
+  width: 60vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #161616;
+  animation: panel-appear-Y 1.2s ease;
+  transform-origin: top;
+}
+
+.fade-out-index {
+  z-index: 600;
+}
+
+@keyframes panel-appear-Y {
+  0% {transform: scaleY(0);}
+  100% {transform: scaleY(1);}
+}
