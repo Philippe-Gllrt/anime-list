@@ -1,7 +1,7 @@
 
 const container = document.querySelector('.index-content');
 
-document.addEventListener("DOMContentLoaded", function() {
+
   const animeCards = document.querySelectorAll(".anime-card");
   let totalWidth = 0;
   const scrollLength = 3000;
@@ -39,4 +39,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     });
   }
-});

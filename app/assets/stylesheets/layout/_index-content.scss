@@ -4,6 +4,7 @@
   align-items: center;
   height: 95vh;
   overflow-x: visible;
+  transition: 2s;
 }
 
 #first-letter {
@@ -14,6 +15,7 @@
   font-size: 2em;
   color: white;
   margin: 0 1em;
+  animation: fade-in-banner 1s ease;
 }
 
 .scale-down {
@@ -37,4 +39,9 @@
   transform: scaleX(1);
   transform-origin: right;
   transition: 1s;
+}
+
+@keyframes fade-in-banner {
+  0% { opacity: 0}
+  100% {opacity: 1}
 }

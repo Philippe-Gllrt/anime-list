@@ -1,7 +1,7 @@
 <div class="fade_index"></div>
 <%= render "shared/header" %>
-<div class="index-content">
-  <% @anime.each do |element|%>
+<div class="index-content scale-down">
+  <% @anime.sort_by{ |k | k['title'] }.each do |element|%>
     <div class="anime-card" data-anime-id="<%=element.id%>">
       <h2> <%= element.title %> </h2>
       <div class="card-zoom">

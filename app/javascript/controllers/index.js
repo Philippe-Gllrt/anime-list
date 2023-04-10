@@ -4,20 +4,11 @@
 
 import { application } from "./application"
 
+import BtnLandingController from "./btn_landing_controller"
+application.register("btn-landing", BtnLandingController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import HorizontalScrolling from "./horizontal_scrolling"
-application.register("horizontal_scrolling", HorizontalScrolling)
-
-// import AnimeForm from "./anime_form"
-// application.register("anime_form", AnimeForm)
-
-import TransitionIndexShow from "./transition_index_show"
-application.register("transition_index_show", TransitionIndexShow)
-
-import LandingPage from "./landing_page"
-application.register("landing_page", LandingPage)
-
-import BtnHome from "./btn_home"
-application.register("btn-home", BtnHome)
+import LandingPageController from "./landing_page_controller"
+application.register("landing-page", LandingPageController)
