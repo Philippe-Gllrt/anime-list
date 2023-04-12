@@ -1,18 +1,20 @@
-<div class="fade_index"></div>
-<%= render "shared/header" %>
-<div class="index-content scale-down">
-  <% @anime.sort_by{ |k | k['title'] }.each do |element|%>
-    <div class="anime-card" data-anime-id="<%=element.id%>">
-      <h2> <%= element.title %> </h2>
-      <div class="card-zoom">
-        <% if element.photo.attached? %>
-          <%= cl_image_tag element.photo.key, height: 300, width: 500, crop: :fill, class: "card-illustration" %>
-        <% else %>
-          <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%> class="card-illustration">
-        <% end %>
+<div data-controller='index-fade-in horizontal-scroll index-fade-out'>
+  <div class="fade_index"></div>
+  <%= render "shared/header" %>
+  <div class="index-content scale-down" data-index-fade-in-target='animeList'  data-index-fade-out-target='animeList' data-horizontal-scroll-target='animeList'>
+    <% @anime.each do |element|%>
+      <div class="anime-card" data-anime-id="<%=element.id%>" data-index-fade-in-target='animeCard' data-index-fade-out-target='animeCard'>
+        <h2> <%= element.title %> </h2>
+        <div class="card-zoom">
+          <% if element.photo.attached? %>
+            <%= cl_image_tag element.photo.key, height: 300, width: 500, crop: :fill, class: "card-illustration" %>
+          <% else %>
+            <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%> class="card-illustration">
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 
-<h2 id="first-letter"><%= @anime[0].title[0] %></h2>
+  <h2 id="first-letter" data-horizontal-scroll-target='firstLetter'><%= @anime[0].title[0] %></h2>
+</div>

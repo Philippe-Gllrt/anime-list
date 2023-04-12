@@ -45,3 +45,20 @@
   0% { opacity: 0}
   100% {opacity: 1}
 }
+
+#fade-panel-index {
+  animation: container-slide 2s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  // background-color: #161616;
+  transform: scaleX(0);
+
+}
+
+@keyframes container-slide {
+  0% { transform: scaleX(100)}
+  100% { transform: scaleX(0);}
+}

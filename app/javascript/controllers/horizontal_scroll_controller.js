@@ -1,10 +1,12 @@
-const scrollContainer = document.querySelector("html");
-const animeList = document.querySelector('.index-content');
-const firstLetterElement = document.getElementById('first-letter');
+import { Controller } from "@hotwired/stimulus"
 
-function updateFirstLetter() {
+const scrollContainer = document.querySelector("html");
+
+
+function updateFirstLetter(animeList, firstLetterElement) {
   // Iterate over each anime element in the list
   for (let i = 0; i < animeList.children.length; i++) {
+    console.log('je rentre dans le boucle');
     const animeElement = animeList.children[i];
     const animeRect = animeElement.getBoundingClientRect();
     // Check if the anime element is visible on the screen
@@ -19,7 +21,7 @@ function updateFirstLetter() {
   }
 }
 
-function infiniteScroll() {
+function infiniteScroll(animeList) {
   const containerWidth = scrollContainer.offsetWidth;
   const contentWidth = scrollContainer.scrollWidth;
   const scrollLeft = scrollContainer.scrollLeft;
@@ -32,11 +34,17 @@ function infiniteScroll() {
   }
 }
 
-scrollContainer.addEventListener("wheel", (evt) => {
-  scrollContainer.scrollLeft += evt.deltaY;
-  updateFirstLetter();
-});
+// Connects to data-controller="horizontal-scroll"
+export default class extends Controller {
+  static targets = ['animeList', 'firstLetter']
+  connect() {
+    scrollContainer.addEventListener("wheel", (evt) => {
+      scrollContainer.scrollLeft += evt.deltaY;
+      updateFirstLetter(this.animeListTarget, this.firstLetterTarget);
+    });
 
-scrollContainer.addEventListener("scroll", (evt) => {
-  infiniteScroll();
-});
+    scrollContainer.addEventListener("scroll", (evt) => {
+      infiniteScroll(this.animeListTarget);
+    });
+  }
+}

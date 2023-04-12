@@ -1,6 +1,6 @@
 class AnimesController < ApplicationController
   def index
-    @anime = Anime.all
+    @anime = Anime.all.sort_by{ |k | k['title'] }
   end
 
   def show
@@ -9,11 +9,6 @@ class AnimesController < ApplicationController
 
   def create
     @anime = Anime.new(anime_params)
-    puts "-------------- anime params -----------------"
-    puts @anime
-    puts "------------------user ------------------"
-    puts current_user
-    puts User.first.id
     @anime.user_id = User.first.id
     if params[:q8].present?
       cloudinary_upload = Cloudinary::Uploader.upload(params[:q8])
