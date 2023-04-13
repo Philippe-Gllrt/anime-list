@@ -1,7 +1,8 @@
 .btn-home-index {
   text-align: center;
-  width: fit-content;
-  padding: 0.3em 2em;
+  width: 8em;
+  padding: 0.3em 0;
+  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.262);
   border-radius: 5px;
   margin-top: 4.5em;
@@ -13,7 +14,7 @@
 
 .btn-home-index:hover {
   p {
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     transition: 0.8s ease;
   }
 }

@@ -37,7 +37,7 @@
           }, 1000);
 
           setTimeout(function() {
-            // window.location.href = `/animes/${animeCards[i].getAttribute('data-anime-id')}`;
+            window.location.href = `/animes/${animeCards[i].getAttribute('data-anime-id')}`;
           }, 2200);
 
         });
