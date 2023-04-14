@@ -3,11 +3,14 @@
   width: 100vw;
   padding: 6vh 7vw;
   overflow: hidden;
-  animation: show-appear 2s ease;
 
   p {
     font-size: 16px;
   }
+}
+
+.show-fade-in {
+  animation: show-appear 2s ease;
 }
 
 #upper-part {
@@ -67,6 +70,7 @@
   position: absolute;
   left: 4vw;
   bottom: 5vh;
+  cursor: pointer;
 }
 
 .arrow-left:hover {
@@ -85,4 +89,14 @@
   50% {transform: translateX(0);}
   75% {transform: translateX(0.3em);}
   100% {transform: translateX(0);}
+}
+
+.show-fade-out {
+  animation: show-disappear 2.05s ease;
+}
+
+@keyframes show-disappear {
+  0% {transform: scale(1) translateX(0);}
+  25% {transform: scale(0.5) translateX(0);}
+  100% {transform: scale(0.5) translateX(200vw);}
 }

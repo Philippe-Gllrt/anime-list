@@ -6,7 +6,6 @@ const scrollContainer = document.querySelector("html");
 function updateFirstLetter(animeList, firstLetterElement) {
   // Iterate over each anime element in the list
   for (let i = 0; i < animeList.children.length; i++) {
-    console.log('je rentre dans le boucle');
     const animeElement = animeList.children[i];
     const animeRect = animeElement.getBoundingClientRect();
     // Check if the anime element is visible on the screen

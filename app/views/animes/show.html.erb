@@ -1,4 +1,5 @@
-<div id='show-container'>
+<div data-controller='show-transition'>
+<div id='show-container' data-show-transition-target='container' class='show-fade-in'>
   <div id='upper-part'>
     <div id='info-column'>
       <div>
@@ -20,15 +21,10 @@
       <img src="<%=@anime.image_url%>" alt=<%="#{@anime.title} Illustration picture"%> class="card-illustration-show">
     <% end %>
   </div>
-    <p><%=@anime.synopsis %></p>
-    <div class='arrow-left'>
-      <a class='link' href="/animes">
-        <div class='arrow-stick'></div>
-        <div class='arrow-end'></div>
-      </a>
-    </div>
-
-
-
-
+  <p><%=@anime.synopsis %></p>
+  <div class='arrow-left' data-show-transition-target='arrow'>
+    <div class='arrow-stick'></div>
+    <div class='arrow-end'></div>
+  </div>
+</div>
 </div>

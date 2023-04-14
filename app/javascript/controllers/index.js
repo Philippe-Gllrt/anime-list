@@ -21,3 +21,6 @@ application.register("index-fade-out", IndexFadeOutController)
 
 import LandingPageController from "./landing_page_controller"
 application.register("landing-page", LandingPageController)
+
+import ShowTransitionController from "./show_transition_controller"
+application.register("show-transition", ShowTransitionController)
