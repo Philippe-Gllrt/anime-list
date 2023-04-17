@@ -6,8 +6,8 @@
       <div class="anime-card" data-anime-id="<%=element.id%>" data-index-fade-in-target='animeCard' data-index-fade-out-target='animeCard'>
         <h2> <%= element.title %> </h2>
         <div class="card-zoom">
-          <% if element.photo.attached? %>
-            <%= cl_image_tag element.photo.key, height: 300, width: 500, crop: :fill, class: "card-illustration" %>
+          <% if element.picture.attached? %>
+            <%= cl_image_tag element.picture.key, height: 300, width: 500, crop: :fill, class: "card-illustration" %>
           <% else %>
             <img src="<%=element.image_url%>" alt=<%="#{element.title} Illustration picture"%> class="card-illustration">
           <% end %>

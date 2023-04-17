@@ -1,0 +1,47 @@
+.show-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // h2 {
+  //   font-size: 50px;
+  // }
+}
+
+#progressbar {
+  position: absolute;
+  transform-origin: center;
+  top: auto;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1.5em;
+}
+
+.progressdot {
+  margin-bottom: 2em;
+}
+
+.form-buttons {
+  width: 100%;
+  margin-top: 3em;
+  display: flex;
+  justify-content: end;
+}
+
+.form-button {
+  margin-left: 2em;
+}
+
+#picture {
+  font-size: 2vw;
+}
+
+#indication {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  opacity: .3;
+}

@@ -1,5 +1,5 @@
 class AddImageUrlToAnimes < ActiveRecord::Migration[7.0]
   def change
-    add_column :animes, :image_url, :string
+    add_column :animes, :image_url, :string, null: true
   end
 end

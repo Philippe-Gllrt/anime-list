@@ -15,8 +15,8 @@
         <h3><%="#{@anime.rate_synopsis}/5" %></h3>
       </div>
     </div>
-    <% if @anime.photo.attached? %>
-     <%= cl_image_tag @anime.photo.key, crop: :fill, class: "card-illustration-show" %>
+    <% if @anime.picture.attached? %>
+     <%= cl_image_tag @anime.picture.key, crop: :fill, class: "card-illustration-show" %>
     <% else %>
       <img src="<%=@anime.image_url%>" alt=<%="#{@anime.title} Illustration picture"%> class="card-illustration-show">
     <% end %>

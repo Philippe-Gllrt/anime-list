@@ -1,47 +1,113 @@
-<!-- multistep form -->
-<form id="multistepsform" data-controller='anime-form'>
+<div class='show-container'>
+  <!-- multistep form -->
+  <!--- <form id="multistepsform" data-controller='anime-form' data-anime-form-target="form" action="/animes" method="POST" enctype="multipart/form-data">
+
+    <%= csrf_meta_tags %>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="title"><h2>Title</h2></label>
+        <input type="text" name="title" id="title" class='form-inputs' placeholder='Naruto'>
+      </div>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="synopsis"><h2>Synopsis</h2></label>
+        <textarea name="synopsis" id="synopsis" class='form-inputs text-input'></textarea>
+      </div>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="rate-animation"><h2>Seasons</h2></label>
+        <input type="text" name="season" id="season" class='form-inputs' placeholder='6'>
+      </div>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="rate-animation"><h2>Rate Animation</h2></label>
+        <input type="text" name="rate_animation" id="rate_animation" class='form-inputs' placeholder='4.2'>
+      </div>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="rate-synopsis"><h2>Rate Synopsis</h2></label>
+        <input type="text" name="rate_synopsis" id="rate_synopsis" class='form-inputs' placeholder='4.5'>
+      </div>
+
+      <div class="step-container" data-anime-form-target="formTargets">
+        <label for="picture"><h2>Picture</h2></label>
+        <input type="file" name="picture" id="picture" id="file-input" class='form-inputs'>
+      </div>
+
+      <div class="form-buttons">
+        <div class='form-button' data-action="click->anime-form#previousStep"><i class="fa-solid fa-chevron-left"></i></div>
+        <div class='form-button' data-action="click->anime-form#nextStep"><i class="fa-solid fa-chevron-right"></i></div>
+      </div>
+
+      <input type="submit" value="Submit">
+  </form> --->
+
+
+  <%= form_with url: '/animes', method: :post, data: { controller: 'anime-form', anime_form_target: 'form' } do |f| %>
   <!-- steps -->
-    <div class="step-container" data-anime-form-target="formTargets">
-      <label for="title">Title:</label>
-      <input type="text" name="title" id="title">
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :title do %>
+      <h2>Title</h2>
+    <% end %>
+    <%= f.text_field :title, class: 'form-inputs', placeholder: 'Naruto' %>
+  </div>
 
-    <div class="step-container" data-anime-form-target="formTargets">
-      <label for="synopsis">Synopsis:</label>
-      <textarea name="synopsis" id="synopsis"></textarea>
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :synopsis do %>
+      <h2>Synopsis</h2>
+    <% end %>
+    <%= f.text_area :synopsis, class: 'form-inputs text-input' %>
+  </div>
 
-    <div class="step-container" data-anime-form-target="formTargets">
-      <label for="rate-animation">Rate Animation:</label>
-      <input type="number" name="rate-animation" id="rate-animation" min="0" max="5">
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :season do %>
+      <h2>Seasons</h2>
+    <% end %>
+    <%= f.text_field :season, class: 'form-inputs', placeholder: '6' %>
+  </div>
 
-    <div class="step-container" data-anime-form-target="formTargets">
-      <label for="rate-synopsis">Rate Synopsis:</label>
-      <input type="number" name="rate-synopsis" id="rate-synopsis" min="0" max="5">
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :rate_animation do %>
+      <h2>Rate Animation</h2>
+    <% end %>
+    <%= f.text_field :rate_animation, class: 'form-inputs', placeholder: '4.2' %>
+  </div>
 
-    <div class="step-container" data-anime-form-target="formTargets">
-      <label for="picture">Picture:</label>
-      <input type="file" name="picture" id="picture">
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :rate_synopsis do %>
+      <h2>Rate Synopsis</h2>
+    <% end %>
+    <%= f.text_field :rate_synopsis, class: 'form-inputs', placeholder: '4.5' %>
+  </div>
 
-    <div class="form-buttons">
-      <button type="button" data-action="click->anime-form#previousStep">Previous</button>
-      <button type="button" data-action="click->anime-form#nextStep">Next</button>
-    </div>
+  <div class="step-container" data-anime-form-target="formTargets">
+    <%= f.label :picture do %>
+      <h2>Picture</h2>
+    <% end %>
+    <%= f.file_field :picture, id: 'picture', class: 'form-inputs' %>
+  </div>
 
-</form>
-<!-- progressbar -->
-<div id="progressbar">
-  <div class="progressdot" data-anime-form-target="progressDots"></div>
-  <div class="progressdot" data-anime-form-target="progressDots"></div>
-  <div class="progressdot" data-anime-form-target="progressDots"></div>
-  <div class="progressdot" data-anime-form-target="progressDots"></div>
-  <div class="progressdot" data-anime-form-target="progressDots"></div>
+  <div class="form-buttons">
+    <div class='form-button' data-action="click->anime-form#previousStep"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class='form-button' data-action="click->anime-form#nextStep"><i class="fa-solid fa-chevron-right"></i></div>
+  </div>
+  <%= f.submit 'Submit' %>
+<% end %>
+
+
+
+
+  <!-- progressbar -->
+  <div id="progressbar">
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+  </div>
+
+  <div id='indication'>
+    <p> Use arrows or press enter to continue</p>
+  </div>
 </div>
-
-<%# <div class="form-buttons">
-  <button type="button" data-action="click->anime-form#previousStep">Previous</button>
-  <button type="button" data-action="click->anime-form#nextStep">Next</button>
-</div> %>
