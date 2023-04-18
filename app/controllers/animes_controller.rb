@@ -9,7 +9,6 @@ class AnimesController < ApplicationController
   end
 
   def create
-    puts anime_params
     @anime = Anime.new(anime_params)
     @anime.user_id = User.first.id
     if params[:picture].present?

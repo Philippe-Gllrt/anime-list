@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AnimeFormController from "./anime_form_controller"
+application.register("anime-form", AnimeFormController)
+
 import BtnLandingController from "./btn_landing_controller"
 application.register("btn-landing", BtnLandingController)
 
@@ -24,6 +27,3 @@ application.register("landing-page", LandingPageController)
 
 import ShowTransitionController from "./show_transition_controller"
 application.register("show-transition", ShowTransitionController)
-
-import AnimeFormController from "./anime_form_controller"
-application.register("anime-form", AnimeFormController)

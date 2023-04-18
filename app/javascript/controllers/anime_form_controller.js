@@ -10,21 +10,34 @@ export default class extends Controller {
     // const formData = new FormData(this.formTarget);
     // formData.append('authenticity_token', csrfToken);
 
-    this.formTargetsTargets[currentStep].classList.add('active');
-    progressDots[currentStep].setAttribute("id", 'active-dot')
-    document.addEventListener('keypress', function (e) {
+    this.formTarget.querySelectorAll('.form-inputs').forEach(input => {
+      input.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+          e.preventDefault(); // Prevent form submission
+        }
+      });
+    });
+
+    this.formTargetsTargets[currentStep].classList.remove('no-display');
+    setTimeout(function() {
+      document.querySelectorAll(".progressdot")[currentStep].setAttribute("id", 'active-dot')
+    }, 50);
+
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') {
+        e.preventDefault();
         this.nextStep()
       }
     }.bind(this));
+
   }
 
   previousStep() {
     if (currentStep > 0 ) {
       progressDots[currentStep].removeAttribute("id", 'active-dot')
-      this.formTargetsTargets[currentStep].classList.remove('active');
+      this.formTargetsTargets[currentStep].classList.add('no-display');
       currentStep -= 1;
-      this.formTargetsTargets[currentStep].classList.add('active');
+      this.formTargetsTargets[currentStep].classList.remove('no-display');
     }
   }
 
@@ -32,12 +45,13 @@ export default class extends Controller {
     if (currentStep === (this.formTargetsTargets.length - 1)) {
       console.log('envoyé')
       this.formTarget.submit()
+      console.log('bite')
     }
 
     if (currentStep <  this.formTargetsTargets.length - 1) {
-      this.formTargetsTargets[currentStep].classList.remove('active');
+      this.formTargetsTargets[currentStep].classList.add('no-display');
       currentStep += 1;
-      this.formTargetsTargets[currentStep].classList.add('active');
+      this.formTargetsTargets[currentStep].classList.remove('no-display');
       progressDots[currentStep].setAttribute("id", 'active-dot')
     }
 

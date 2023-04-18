@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_17_154515) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_18_074925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,8 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_17_154515) do
     t.string "title"
     t.integer "season"
     t.string "synopsis"
-    t.integer "rate_synopsis"
-    t.integer "rate_animation"
+    t.float "rate_synopsis"
+    t.float "rate_animation"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

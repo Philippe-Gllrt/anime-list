@@ -2,7 +2,7 @@
 
   // Connects to data-controller="index-fade-out"
   export default class extends Controller {
-    static targets = ['animeList', 'animeCard']
+    static targets = ['animeList', 'animeCard', 'panel1', 'panel2']
 
     connect() {
       const animeCards = this.animeCardTargets;
@@ -42,5 +42,20 @@
 
         });
       }
+    }
+
+    recommendation() {
+      const panel1 = this.panel1Target;
+      const panel2 = this.panel2Target;
+      this.panel1Target.classList.remove('no-display');
+      this.panel2Target.classList.remove('no-display');
+      setTimeout(function() {
+        window.location.href = `/recommendations/new`;
+        setTimeout(function() {
+          panel1.classList.add('no-display');
+        panel2.classList.add('no-display');
+        }, 50);
+      }, 1250);
+
     }
   }

@@ -1,2 +1,37 @@
-<h1>Recommendations#new</h1>
-<p>Find me in app/views/recommendations/new.html.erb</p>
+<div class='show-container'>
+
+  <%= form_with url: '/recommendations', method: :post, data: { controller: 'anime-form', anime_form_target: 'form' } do |f| %>
+  <!-- steps -->
+  <div class="step-container no-display" data-anime-form-target="formTargets">
+    <%= f.label :title do %>
+      <h2>Title</h2>
+    <% end %>
+    <%= f.text_field :title, class: 'form-inputs', placeholder: 'Naruto' %>
+  </div>
+
+  <div class="step-container no-display" data-anime-form-target="formTargets">
+    <%= f.label :synopsis do %>
+      <h2>Comment</h2>
+    <% end %>
+    <%= f.text_area :comment, class: 'form-inputs text-input' %>
+  </div>
+
+  <div class="form-buttons">
+    <div class='form-button' data-action="click->anime-form#previousStep"><i class="fa-solid fa-chevron-left"></i></div>
+    <div class='form-button' data-action="click->anime-form#nextStep"><i class="fa-solid fa-chevron-right"></i></div>
+  </div>
+<% end %>
+
+
+
+
+  <!-- progressbar -->
+  <div id="progressbar">
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+    <div class="progressdot" data-anime-form-target="progressDots"></div>
+  </div>
+
+  <div id='indication'>
+    <p> Use arrows or press enter to continue</p>
+  </div>
+</div>
