@@ -13,7 +13,7 @@ export default class extends Controller {
       document.querySelector('#show-container').classList.add('show-fade-out');
       setTimeout(function() {
         window.location.href = `/animes`;
-      }, 1900);
+      }, 1600);
     });
   }
 }

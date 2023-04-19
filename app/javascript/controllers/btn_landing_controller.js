@@ -5,11 +5,17 @@ export default class extends Controller {
   static targets =['btn', 'panel1', 'panel2']
   connect() {
     this.btnTarget.addEventListener("click", function() {
+        const panel1 = this.panel1Target;
+        const panel2 = this.panel2Target;
         console.log(this.panel1Target);
-        this.panel1Target.classList.remove("no-display");
-        this.panel2Target.classList.remove("no-display");
+        panel1.classList.remove("no-display");
+        panel2.classList.remove("no-display");
         setTimeout(function() {
           window.location.href = `/animes`;
+          setTimeout(function() {
+            panel1.classList.add("no-display");
+            panel2.classList.add("no-display");
+          }, 50);
         }, 1400);
     }.bind(this));
   };

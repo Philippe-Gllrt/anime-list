@@ -3,14 +3,14 @@
   <%= form_with url: '/recommendations', method: :post, data: { controller: 'anime-form', anime_form_target: 'form' } do |f| %>
   <!-- steps -->
   <div class="step-container no-display" data-anime-form-target="formTargets">
-    <%= f.label :title do %>
+    <%= f.label :title, class: 'form-label' do %>
       <h2>Title</h2>
     <% end %>
     <%= f.text_field :title, class: 'form-inputs', placeholder: 'Naruto' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
-    <%= f.label :synopsis do %>
+    <%= f.label :synopsis, class: 'form-label' do %>
       <h2>Comment</h2>
     <% end %>
     <%= f.text_area :comment, class: 'form-inputs text-input' %>
@@ -33,5 +33,10 @@
 
   <div id='indication'>
     <p> Use arrows or press enter to continue</p>
+  </div>
+
+  <div class='arrow-left' data-controller='btn-return' data-btn-return-target='arrow'>
+    <div class='arrow-stick'></div>
+    <div class='arrow-end'></div>
   </div>
 </div>

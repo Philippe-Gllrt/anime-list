@@ -35,16 +35,16 @@
   transform-origin: right;
   padding: 3em 5em;
   line-height: 1.4;
-
-  h1 {
-    margin-bottom: 1.5em;
-  }
 }
 
 #right-panel-content {
   width: 100%;
   height: 100%;
   animation: content-appear 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 4em;
 }
 
 @keyframes panel-appear {

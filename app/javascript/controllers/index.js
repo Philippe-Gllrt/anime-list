@@ -10,6 +10,9 @@ application.register("anime-form", AnimeFormController)
 import BtnLandingController from "./btn_landing_controller"
 application.register("btn-landing", BtnLandingController)
 
+import BtnReturnController from "./btn_return_controller"
+application.register("btn-return", BtnReturnController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
