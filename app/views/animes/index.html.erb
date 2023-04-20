@@ -19,4 +19,11 @@
   </div>
 
   <h2 id="first-letter" data-horizontal-scroll-target='firstLetter'><%= @anime[0].title[0] %></h2>
+  <% if !current_user.present? %>
+    <%= link_to "/users/sign_in" do %>
+      <h2 class="btn-connect">Connection</h2>
+    <% end %>
+  <% end %>
+
+  <%# <a href="/users/sign_in"><h2 class="btn-connect">Connection</h2></a> %>
 </div>

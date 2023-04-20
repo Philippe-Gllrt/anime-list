@@ -43,9 +43,7 @@ export default class extends Controller {
 
   nextStep() {
     if (currentStep === (this.formTargetsTargets.length - 1)) {
-      console.log('envoyé')
       this.formTarget.submit()
-      console.log('bite')
     }
 
     if (currentStep <  this.formTargetsTargets.length - 1) {

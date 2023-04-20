@@ -1,10 +1,13 @@
 class RecommendationsController < ApplicationController
+  include Pundit
+
   def index
     @recommendation = Recommendation.all.sort_by{ |k | k['title'] }
   end
 
   def create
     @recommendation = Recommendation.new(recommendation_params)
+    authorize @recommendation
     if @recommendation.save
       redirect_to animes_path
     else
@@ -18,6 +21,7 @@ class RecommendationsController < ApplicationController
 
   def new
     @recommendation = Recommendation.new
+    authorize @recommendation
   end
 
   private

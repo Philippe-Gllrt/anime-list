@@ -1,0 +1,24 @@
+<div class='log-container'>
+  <%= form_with url: 'session_path', method: :post do |f| %>
+    <!-- steps -->
+    <div class="step-log-container" data-anime-form-target="formTargets">
+      <%= f.label :email do %>
+        <h2>Email</h2>
+      <% end %>
+      <%= f.text_field :email, class: 'form-log-inputs', placeholder: 'Rock@lee.com' %>
+    </div>
+
+    <div class="step-log-container" data-anime-form-target="formTargets">
+      <%= f.label :password do %>
+        <h2>password</h2>
+      <% end %>
+      <%= f.text_field :password, class: 'form-log-inputs' %>
+    </div>
+
+    <div>
+      <%= f.button class: 'btn-log' do %>
+        <%= content_tag(:p, 'Connect') %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

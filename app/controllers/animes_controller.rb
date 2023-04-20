@@ -1,11 +1,15 @@
 class AnimesController < ApplicationController
   skip_before_action :verify_authenticity_token
+  include Pundit
+
   def index
     @anime = Anime.all.sort_by{ |k | k['title'] }
+    # authorize @anime
   end
 
   def show
     @anime = Anime.find(params[:id])
+    authorize @anime
   end
 
   def create
@@ -20,10 +24,12 @@ class AnimesController < ApplicationController
     else
       render 'new'
     end
+    authorize @anime
   end
 
   def new
     @anime = Anime.new
+    authorize @anime
   end
 
   private
