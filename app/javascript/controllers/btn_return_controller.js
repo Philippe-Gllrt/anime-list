@@ -12,7 +12,7 @@ export default class extends Controller {
         window.location.href = `/animes`;
         setTimeout(function() {
           document.querySelector('.show-container').classList.remove('recommendation-disppear-1')
-        }, 50);
+        }, 200);
       }, 1000);
     });
   }

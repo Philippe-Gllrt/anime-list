@@ -13,6 +13,9 @@ application.register("btn-landing", BtnLandingController)
 import BtnReturnController from "./btn_return_controller"
 application.register("btn-return", BtnReturnController)
 
+import BtnReturnFromNewAnimeController from "./btn_return_from_new_anime_controller"
+application.register("btn-return-from-new-anime", BtnReturnFromNewAnimeController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -15,8 +15,8 @@ export default class extends Controller {
           setTimeout(function() {
             panel1.classList.add("no-display");
             panel2.classList.add("no-display");
-          }, 50);
-        }, 1400);
+          }, 400);
+        }, 1200);
     }.bind(this));
   };
 };
