@@ -6,35 +6,35 @@
     <%= f.label :title do %>
       <h2>Title</h2>
     <% end %>
-    <%= f.text_field :title, class: 'form-inputs', placeholder: 'Naruto' %>
+    <%= f.text_field :title, autofocus: true, class: 'form-inputs', placeholder: 'Naruto' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
     <%= f.label :synopsis do %>
       <h2>Synopsis</h2>
     <% end %>
-    <%= f.text_area :synopsis, class: 'form-inputs text-input' %>
+    <%= f.text_area :synopsis, autofocus: true, class: 'form-inputs text-input' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
     <%= f.label :season do %>
       <h2>Seasons</h2>
     <% end %>
-    <%= f.text_field :season, class: 'form-inputs', placeholder: '6' %>
+    <%= f.text_field :season, autofocus: true, class: 'form-inputs', placeholder: '6' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
     <%= f.label :rate_animation do %>
       <h2>Rate Animation</h2>
     <% end %>
-    <%= f.text_field :rate_animation, class: 'form-inputs', placeholder: '4.2' %>
+    <%= f.text_field :rate_animation, autofocus: true, class: 'form-inputs', placeholder: '4.2' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
     <%= f.label :rate_synopsis do %>
       <h2>Rate Synopsis</h2>
     <% end %>
-    <%= f.text_field :rate_synopsis, class: 'form-inputs', placeholder: '4.5' %>
+    <%= f.text_field :rate_synopsis, autofocus: true, class: 'form-inputs', placeholder: '4.5' %>
   </div>
 
   <div class="step-container no-display" data-anime-form-target="formTargets">
@@ -68,7 +68,7 @@
     <p> Use arrows or press enter to continue</p>
   </div>
 
-  <div class='arrow-left' data-show-transition-target='arrow'>
+  <div class='arrow-left' data-controller='btn-return' data-show-transition-target='arrow'>
     <div class='arrow-stick'></div>
     <div class='arrow-end'></div>
   </div>

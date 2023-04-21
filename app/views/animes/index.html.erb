@@ -25,5 +25,11 @@
     <% end %>
   <% end %>
 
+  <% if current_user.present? %>
+    <%= link_to destroy_user_session_path, data: { turbo_method: :delete } do %>
+      <h2 class="btn-connect">Log out</h2>
+    <% end %>
+  <% end %>
+
   <%# <a href="/users/sign_in"><h2 class="btn-connect">Connection</h2></a> %>
 </div>

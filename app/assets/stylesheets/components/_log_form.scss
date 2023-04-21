@@ -3,6 +3,7 @@
 }
 
 .form-log-inputs {
+  color: white;
   margin-top: .3em;
   font-size: 2vw;
   background: none;
@@ -20,22 +21,39 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
-  animation: log-container 1.5s ease;
 }
 
 .btn-log {
   text-align: center;
-  width: 9em;
-  padding: 0.5em 0;
+  width: 8em;
+  padding: 0.5em;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.262);
   border-radius: 5px;
   cursor: pointer;
   background-color: #161616;
+  color: white;
+  transition: 0.8s ease;
 }
 
+.btn-log:hover {
+  letter-spacing: 0.1em;
+  transition: 0.8s ease;
+}
 
-@keyframes log-container {
-  0%{ transform: translateY(100vh);}
-  100%{ transform: translateY(0);}
+.step-log-container-fade1 {
+  animation: log-fade 0.8s ease;
+}
+
+.step-log-container-fade2 {
+  animation: log-fade 1s ease;
+}
+
+.step-log-container-fade3 {
+  animation: log-fade 1.2s ease;
+}
+
+@keyframes log-fade {
+  0% {transform: translateX(-100vw);}
+  100% {transform: translateX(0);}
 }

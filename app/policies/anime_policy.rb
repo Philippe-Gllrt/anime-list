@@ -15,10 +15,10 @@ class AnimePolicy < ApplicationPolicy
   end
 
   def new?
-    user.admin? ? scope.all : scope.where(user: user)
+    user.admin?
   end
 
   def create?
-    user.admin? ? scope.all : scope.where(user: user)
+    user.admin?
   end
 end

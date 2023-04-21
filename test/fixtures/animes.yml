@@ -4,6 +4,8 @@ one:
   title: MyString
   season: 1
   synopsis: MyString
+  comment: MyString
+  link: MyString
   rate_synopsis: 1
   rate_animation: 1
   user: one

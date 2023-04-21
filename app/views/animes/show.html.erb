@@ -1,30 +1,30 @@
 <div data-controller='show-transition'>
-<div id='show-container' data-show-transition-target='container' class='show-fade-in'>
-  <div id='upper-part'>
-    <div id='info-column'>
-      <div>
-        <h2><%=@anime.title%></h2>
-          <h3><%="Seasons: #{@anime.season}" %></h3>
+  <div id='show-container' data-show-transition-target='container' class='show-fade-in'>
+    <div id='upper-part'>
+      <div id='info-column'>
+        <div>
+          <h2><%=@anime.title%></h2>
+            <h3><%="Seasons: #{@anime.season}" %></h3>
+        </div>
+        <div>
+          <h2>ANIMATION </h2>
+          <h3><%= "#{@anime.rate_animation}/5" %></h3>
+        </div>
+        <div>
+          <h2>SYNOPSIS </h2>
+          <h3><%="#{@anime.rate_synopsis}/5" %></h3>
+        </div>
       </div>
-      <div>
-        <h2>ANIMATION </h2>
-        <h3><%= "#{@anime.rate_animation}/5" %></h3>
-      </div>
-      <div>
-        <h2>SYNOPSIS </h2>
-        <h3><%="#{@anime.rate_synopsis}/5" %></h3>
-      </div>
+      <% if @anime.picture.attached? %>
+        <%= cl_image_tag @anime.picture.key, crop: :fill, class: "card-illustration-show" %>
+      <% else %>
+        <img src="<%=@anime.image_url%>" alt=<%="#{@anime.title} Illustration picture"%> class="card-illustration-show">
+      <% end %>
     </div>
-    <% if @anime.picture.attached? %>
-     <%= cl_image_tag @anime.picture.key, crop: :fill, class: "card-illustration-show" %>
-    <% else %>
-      <img src="<%=@anime.image_url%>" alt=<%="#{@anime.title} Illustration picture"%> class="card-illustration-show">
-    <% end %>
+    <p><%=@anime.synopsis %></p>
+    <div class='arrow-left' data-show-transition-target='arrow'>
+      <div class='arrow-stick'></div>
+      <div class='arrow-end'></div>
+    </div>
   </div>
-  <p><%=@anime.synopsis %></p>
-  <div class='arrow-left' data-show-transition-target='arrow'>
-    <div class='arrow-stick'></div>
-    <div class='arrow-end'></div>
-  </div>
-</div>
 </div>

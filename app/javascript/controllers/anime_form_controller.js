@@ -52,8 +52,5 @@ export default class extends Controller {
       this.formTargetsTargets[currentStep].classList.remove('no-display');
       progressDots[currentStep].setAttribute("id", 'active-dot')
     }
-
-    console.log(currentStep)
-    console.log(this.formTargetsTargets.length - 1)
   }
 }

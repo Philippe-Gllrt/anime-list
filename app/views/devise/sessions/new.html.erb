@@ -1,24 +1,23 @@
 <div class='log-container'>
-  <%= form_with url: 'session_path', method: :post do |f| %>
-    <!-- steps -->
-    <div class="step-log-container" data-anime-form-target="formTargets">
-      <%= f.label :email do %>
-        <h2>Email</h2>
-      <% end %>
-      <%= f.text_field :email, class: 'form-log-inputs', placeholder: 'Rock@lee.com' %>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="step-log-container step-log-container-fade1" data-anime-form-target="formTargets">
+      <%= f.label :email do%>
+      <h2>Email</h2>
+    <% end %>
+      <%= f.email_field :email, autocomplete: "email", class: "form-log-inputs", placeholder: 'Rock@lee.com' %>
     </div>
 
-    <div class="step-log-container" data-anime-form-target="formTargets">
+    <div class="step-log-container step-log-container-fade2" data-anime-form-target="formTargets">
       <%= f.label :password do %>
         <h2>password</h2>
       <% end %>
-      <%= f.text_field :password, class: 'form-log-inputs' %>
+      <%= f.password_field :password, autocomplete: "current-password", class: "form-log-inputs" %>
     </div>
 
-    <div>
-      <%= f.button class: 'btn-log' do %>
-        <%= content_tag(:p, 'Connect') %>
-      <% end %>
+    <div class="actions step-log-container-fade3">
+      <%= f.submit "connect", class: "btn-log" %>
     </div>
   <% end %>
+
 </div>
