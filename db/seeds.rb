@@ -9,7 +9,8 @@ puts "seeding..."
 
 user = User.create(
   email: "philippe@lewagon.fr",
-  password: "lewagon"
+  password: "lewagon",
+  admin: true
 )
 
 20.times do
