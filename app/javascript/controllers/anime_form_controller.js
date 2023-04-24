@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 let currentStep = 0;
-const progressDots = document.querySelectorAll(".progressdot")
 
 export default class extends Controller {
   static targets = ["formTargets", "form"]
@@ -33,6 +32,7 @@ export default class extends Controller {
   }
 
   previousStep() {
+    const progressDots = document.querySelectorAll(".progressdot")
     if (currentStep > 0 ) {
       progressDots[currentStep].removeAttribute("id", 'active-dot')
       this.formTargetsTargets[currentStep].classList.add('no-display');
@@ -42,6 +42,7 @@ export default class extends Controller {
   }
 
   nextStep() {
+    const progressDots = document.querySelectorAll(".progressdot")
     if (currentStep === (this.formTargetsTargets.length - 1)) {
       this.formTarget.submit()
     }
