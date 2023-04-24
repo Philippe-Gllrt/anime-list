@@ -1,2 +1,9 @@
-<h1>Recommendations#index</h1>
-<p>Find me in app/views/recommendations/index.html.erb</p>
+ <%= render "shared/header" %>
+ <div class='recommendation-card-container'>
+  <% @recommendation.each do |recommendation| %>
+    <div class='recommendation-card'>
+      <h2><%= recommendation.title %></h2>
+      <p><%= recommendation.comment %></p>
+    </div>
+  <% end %>
+</div>

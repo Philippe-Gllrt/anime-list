@@ -1,0 +1,17 @@
+.recommendation-card {
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  padding: 1em 2em 1em 2em;
+}
+
+.recommendation-card-container {
+  position: relative;
+  top: 7vh;
+  animation: recommendation-fade-in ease 1.2s;
+}
+
+@keyframes recommendation-fade-in {
+  0% {transform: translateX(100vw);}
+  100% {transform: translateX(0);}
+}

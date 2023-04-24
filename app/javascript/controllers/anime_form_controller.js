@@ -3,7 +3,7 @@ let currentStep = 0;
 const progressDots = document.querySelectorAll(".progressdot")
 
 export default class extends Controller {
-  static targets = ["formTargets", "progressDots", "form"]
+  static targets = ["formTargets", "form"]
 
   connect() {
     // const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

@@ -6,6 +6,9 @@
     <% if (defined? current_user) && current_user.present? && current_user.admin? %>
       <%= link_to 'ADD ANIME', new_anime_path %>
     <% end %>
+    <% if (defined? current_user) && current_user.present? && current_user.admin? %>
+      <%= link_to 'CONSULT RECOMMENDATIONS', recommendations_path %>
+    <% end %>
     <a data-action="click->index-fade-out#recommendation">RECOMENDATIONS</a>
   </div>
 </div>
