@@ -66,10 +66,37 @@
   height: 100vh;
   // background-color: #161616;
   transform: scaleX(0);
+}
 
+.footer {
+  background-color: #161616;
+  z-index: 20000;
 }
 
 @keyframes container-slide {
   0% { transform: scaleX(100)}
   100% { transform: scaleX(0);}
+}
+
+@media screen and (max-width: 767px) {
+  .index-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5vh
+  }
+
+  #first-letter {
+    display: none;
+  }
+
+  .footer {
+    background-color: #161616;
+    z-index: 2000000;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 12vh;
+  }
 }

@@ -49,3 +49,17 @@
     transition: 0.5s;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .anime-card {
+    height: 35vw;
+    width: 84vw;
+    margin-bottom: 7vh;
+    margin-right: 0;
+    .card-illustration {
+      height: 35vw;
+      width: 70vw;
+    }
+  }
+
+}

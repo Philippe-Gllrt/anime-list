@@ -6,7 +6,7 @@
   justify-content: space-between;
   height: 5vh;
   background-color: #161616;
-  z-index: 500;
+  z-index: 2500;
   a {
     font-family: $Font-h2;
     font-size: 1em;
@@ -16,4 +16,12 @@
     cursor: pointer;
   }
   animation: fade-in-banner 3s ease;
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    a {
+      font-size: .6em;
+    }
+  }
 }
