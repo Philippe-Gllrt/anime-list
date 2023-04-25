@@ -8,14 +8,14 @@
   background-color: #a1a1a1;
   animation: panel-appear-Y ease 1s;
   transform-origin: right;
-  z-index: 2000;
+  z-index: 20000;
 }
 
 #fade-out-index-2 {
   background-color: #161616;
   animation: panel-appear-Y ease 1.2s;
   transform-origin: right;
-  z-index: 2500;
+  z-index: 25000;
 }
 
 @keyframes panel-appear-Y {

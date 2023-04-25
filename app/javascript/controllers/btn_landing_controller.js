@@ -4,10 +4,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets =['btn', 'panel1', 'panel2']
   connect() {
-    this.btnTarget.addEventListener("click", function() {
+    this.btnTarget.addEventListener("mousedown", function() {
         const panel1 = this.panel1Target;
         const panel2 = this.panel2Target;
-        console.log(this.panel1Target);
         panel1.classList.remove("no-display");
         panel2.classList.remove("no-display");
         setTimeout(function() {
