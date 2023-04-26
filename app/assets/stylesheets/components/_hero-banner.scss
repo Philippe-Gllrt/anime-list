@@ -5,7 +5,7 @@
   background-position: center;
   background-blend-mode: multiply;
   // width: 50vw;
-  height: 100vh;
+  height: calc(1.3 * 40vw);
   z-index: 100;
 }
 
@@ -16,12 +16,13 @@
   background-position: center;
   transform: translateX(-20vw);
   // background-blend-mode: multiply;
-  height: 33vh;
+  height: 20vw;
   width: 15vw;
   position: absolute;
-  bottom: 2vh;
+  bottom: calc(50vh - (1.3 * 20vw));
   z-index: 200;
   animation: translation 10s linear infinite, vrombing 0.3s linear infinite;
+  // animation: translation 10s linear infinite;
   animation-delay: 2s;
 }
 
@@ -37,9 +38,9 @@
 }
 
 @keyframes vrombing {
-  0% { bottom: 2vh; }
-  33% { bottom: 2.2vh; }
-  66% { bottom: 1.8vh; }
-  100% { bottom: 2vh; }
+  0% { bottom: calc(50vh - (1.3 * 20vw)); }
+  33% { bottom: calc(50.2vh - (1.3 * 20vw)) }
+  66% { bottom: calc(49.8vh - (1.3 * 20vw)) }
+  100% { bottom: calc(50vh - (1.3 * 20vw)) }
 
 }

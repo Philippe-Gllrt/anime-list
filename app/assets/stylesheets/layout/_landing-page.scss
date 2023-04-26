@@ -9,6 +9,9 @@
   background-color: #ffffff;
   animation: shop-appear 0.7s ease;
   transform-origin: bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #landing-container {
