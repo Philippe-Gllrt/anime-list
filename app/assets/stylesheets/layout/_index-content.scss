@@ -8,23 +8,21 @@
 
 #first-letter {
   position: fixed;
-  bottom: 1em;
+  bottom: 1vh;
   left: 0;
   font-family: $Font-h2;
   font-size: 2em;
   color: white;
-  margin: 0 1em;
   animation: fade-in-banner 3s ease;
 }
 
 .btn-connect {
   position: fixed;
-  bottom: 1em;
+  bottom: 1vh;
   right: 0;
   font-family: $Font-h2;
   font-size: 2em;
   color: rgba(255, 255, 255, 0.07);
-  margin: 0 1em;
   animation: fade-in-banner 3s ease;
 }
 

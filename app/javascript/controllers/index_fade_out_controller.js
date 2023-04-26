@@ -18,12 +18,10 @@
           while (totalWidth < scrollLength) {
 
             const clonedAnime = animeCards[currentIndex].cloneNode(true);
-            console.log(animeList);
             animeList.appendChild(clonedAnime);
             currentIndex = (currentIndex + 1) % animeCards.length;
 
             totalWidth += (100);
-            // console.log((animeCards[currentIndex].offsetWidth*0.3 - 100));
           }
 
           $('html, body').animate({
@@ -61,12 +59,10 @@
       while (totalWidth < scrollLength) {
 
         const clonedAnime = animeCards[currentIndex].cloneNode(true);
-        console.log(animeList);
         animeList.appendChild(clonedAnime);
         currentIndex = (currentIndex + 1) % animeCards.length;
 
         totalWidth += (100);
-        // console.log((animeCards[currentIndex].offsetWidth*0.3 - 100));
       }
 
       $('html, body').animate({

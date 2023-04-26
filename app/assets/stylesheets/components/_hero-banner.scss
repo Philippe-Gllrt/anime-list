@@ -19,10 +19,9 @@
   height: 33vh;
   width: 15vw;
   position: absolute;
-  top: calc(32vh + 0.5 * 40vw);
+  bottom: 2vh;
   z-index: 200;
   animation: translation 10s linear infinite, vrombing 0.3s linear infinite;
-  // animation: translation 10s linear infinite;
   animation-delay: 2s;
 }
 
