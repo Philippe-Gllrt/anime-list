@@ -37,13 +37,15 @@ function infiniteScroll(animeList) {
 export default class extends Controller {
   static targets = ['animeList', 'firstLetter']
   connect() {
-    scrollContainer.addEventListener("wheel", (evt) => {
-      scrollContainer.scrollLeft += evt.deltaY;
-      updateFirstLetter(this.animeListTarget, this.firstLetterTarget);
-    });
+    if (window.innerWidth > 767) {
+      scrollContainer.addEventListener("wheel", (evt) => {
+        scrollContainer.scrollLeft += evt.deltaY;
+        updateFirstLetter(this.animeListTarget, this.firstLetterTarget);
+      });
 
-    scrollContainer.addEventListener("scroll", (evt) => {
-      infiniteScroll(this.animeListTarget);
-    });
+      scrollContainer.addEventListener("scroll", (evt) => {
+        infiniteScroll(this.animeListTarget);
+      });
+    }
   }
 }

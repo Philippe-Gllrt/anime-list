@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: center;
   height: 95vh;
-  overflow-x: visible;
   transition: 2s;
 }
 
@@ -82,7 +81,6 @@
   .index-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding-top: 5vh
   }
 
