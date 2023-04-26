@@ -37,9 +37,9 @@
 }
 
 @keyframes vrombing {
-  0% { top: calc(32vh + 0.5 * 40vw);; }
-  33% { top: calc(32.2vh + 0.5 * 40vw);; }
-  66% { top: calc(31.8vh + 0.5 * 40vw);; }
-  100% { top: calc(32vh + 0.5 * 40vw);; }
+  0% { bottom: 2vh; }
+  33% { bottom: 2.2vh; }
+  66% { bottom: 1.8vh; }
+  100% { bottom: 2vh; }
 
 }
